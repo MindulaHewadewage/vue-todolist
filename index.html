@@ -15,26 +15,27 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="newtask my-4">
-            <figure class="w-25 mx-auto">
-                <img class="img-fluid my-3" src="img/logo.png" alt="">
-            </figure>
-                
-            <div class="input-group mb-3 w-50 mx-auto">
-                <input type="text" class="form-control" placeholder="Nuova Task" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
-            </div>
-        </header>
-        <main class="tasks py-4 w-50 mx-auto">
-            <ul class="list-group">
-                <li class="list-group-item">An active item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
-              </ul>
-        </main>
+
+    <div id="root">
+        <div class="container">
+            <header class="newtask my-4">
+                <figure class="w-25 mx-auto">
+                    <img class="img-fluid my-3" src="img/logo.png" alt="">
+                </figure>
+                    
+                <div class="input-group mb-3 w-50 mx-auto">
+                    <input type="text" class="form-control" placeholder="Nuova Task" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
+                </div>
+            </header>
+            <main class="tasks py-4 w-50 mx-auto">
+                <ul class="list-group">
+                    <li v-for="task in tasks" class="list-group-item">{{task}}</li>
+    
+                  </ul>
+            </main>
+        </div>
     </div>
+
 </body>
 </html>
