@@ -7,6 +7,13 @@ const app = Vue.createApp({
                 'Fare il bucato'
             ]
         }
+    },
+
+    methods:{
+        deleteItem(i){
+            this.tasks.splice(i, 1);
+
+        }
     }
 });
 
