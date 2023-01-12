@@ -26,14 +26,14 @@
                 </figure>
                     
                 <div class="input-group mb-3 w-50 mx-auto">
-                    <input type="text" class="form-control" placeholder="Nuova Task" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
+                    <input v-model="newItem" type="text" class="form-control" placeholder="Nuova Task">
+                    <button  @click="addItem" class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
                 </div>
             </header>
             <main class="tasks py-4 w-50 mx-auto">
                 <ul class="list-group d-flex">
-                    <li v-for="(task,i) in tasks" class="list-group-item d-flex justify-content-between align-items-center">
-                        {{task}}
+                    <li v-for="(item,i) in items" class="list-group-item d-flex justify-content-between align-items-center">
+                        <div :class="{'text-decoration-line-through':item.done}">{{item.text}}</div>
                         <button @click="deleteItem(i)">
                             <i class="bi bi-x "></i>
                         </button>

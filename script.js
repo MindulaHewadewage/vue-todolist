@@ -1,20 +1,35 @@
 const app = Vue.createApp({
     data(){
         return {
-            tasks:[
-                'Fare i compiti',
-                'Fare la spesa',
-                'Fare il bucato'
+            
+            items:[
+                {text:'Fare i compiti',done:true},
+                {text:'Fare la spesa',done:false},
+                {text:'Fare il bucato',done:true},
             ]
         }
     },
 
-    methods:{
-        deleteItem(i){
-            this.tasks.splice(i, 1);
+    // computed:{
+    //     newItem(){
+    //         return this.items.text.push(addItem);
+    //     }
+    // },
 
+    methods:{
+
+        addItem(){
+            if(this.newItem){
+                const item = {done:false, text:this.newItem};
+                this.items.push(item);
+            }
+        },
+
+        deleteItem(i){
+            this.items.splice(i, 1);
         }
     }
+
 });
 
 
